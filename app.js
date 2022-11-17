@@ -85,31 +85,35 @@ startGameBtn.addEventListener('click', () => {
 
 // Not Related to the Game
 // Using the REST Operator
-const sumUp = (resultHandler, ...numbers) => {
+const combine = (resultHandler, operation, ...numbers) => {
   // nesting functions into functions
   const validateNumber = (number) => {
     return isNaN(number) ? 0 : number;
   };
   let sum = 0;
   for (const num of numbers) {
-    sum += validateNumber(num);
+    if (operation === 'ADD') {
+      sum += validateNumber(num);
+    } else {
+      sum -= validateNumber(num);
+    }
   }
   resultHandler(sum);
 };
 
 // Don't use this
-const subtractUp = function() {
-  let sum = 0;
-  for (const num of arguments) {
-    sum -= num;
-  }
-  return sum;
+// const subtractUp = function(resultHandler, ...numbers) {
+//   let sum = 0;
+//   for (const num of numbers) {
+//     sum -= num;
+//   }
+//   resultHandler(sum, 'The result after adding all numbers is: ');
+// };
+
+const showResult = (messageText, result) => {
+  alert(messageText + ' ' + result);
 };
 
-const showResult = (result) => {
-  alert('The result after adding all numbersis: ' + result);
-};
-
-sumUp(showResult, 1, 3, 'dd', 6, -6, 8);
-sumUp(showResult, 1, 3, 5, 6, -6, 8, 9, 19);
-console.log(subtractUp(20, 90, 81));
+combine(showResult.bind(this, 'The result after adding all numbers is'), 'ADD', 1, 3, 'dfd', 6, -6, 8);
+combine(showResult.bind(this, 'The result after adding all numbers is'), 'ADD', 1, 3, 5, 6, -6, 8, 9, 19);
+combine(showResult.bind(this, 'The result after Subtracting all numbers is'), 'SUBTRACT', 20, 90, 81);
