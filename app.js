@@ -82,3 +82,25 @@ startGameBtn.addEventListener('click', () => {
   alert(message);
   gameIsRunning = false;
 });
+
+// Not Related to the Game
+// Using the REST Operator
+const sumUp = (a, b, ...numbers) => {
+  let sum = 0;
+  for (const num of numbers) {
+    sum += num;
+  }
+  return sum;
+};
+
+// Don't use this
+const subtractUp = function() {
+  let sum = 0;
+  for (const num of arguments) {
+    sum -= num;
+  }
+  return sum;
+};
+console.log(sumUp(1, 3, 5, 6, -6, 8));
+console.log(sumUp(1, 3, 5, 6, -6, 8, 9, 19));
+console.log(subtractUp(20, 90, 81));
