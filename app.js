@@ -114,6 +114,6 @@ const showResult = (messageText, result) => {
   alert(messageText + ' ' + result);
 };
 
-combine(showResult.bind(this, 'The result after adding all numbers is'), 'ADD', 1, 3, 'dfd', 6, -6, 8);
-combine(showResult.bind(this, 'The result after adding all numbers is'), 'ADD', 1, 3, 5, 6, -6, 8, 9, 19);
-combine(showResult.bind(this, 'The result after Subtracting all numbers is'), 'SUBTRACT', 20, 90, 81);
+combine(showResult.bind(this, 'The result after adding all numbers is:'), 'ADD', 1, 3, 'dfd', 6, -6, 8);
+combine(showResult.bind(this, 'The result after adding all numbers is:'), 'ADD', 1, 3, 5, 6, -6, 8, 9, 19);
+combine(showResult.bind(this, 'The result after Subtracting all numbers is:'), 'SUBTRACT', 20, 90, 81);
