@@ -1,7 +1,7 @@
 const startGameBtn = document.getElementById('start-game-btn');
 
 // Direct Function
-function gameStart() {
+const start = function gameStart() {
   console.log('Game is starting ---');
 }
 
@@ -14,4 +14,4 @@ function gameStart() {
 // person.greet();
 
 // Indirect Function
-startGameBtn.addEventListener('click', gameStart);
+startGameBtn.addEventListener('click', start);
