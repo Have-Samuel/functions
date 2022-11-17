@@ -1,9 +1,9 @@
 const startGameBtn = document.getElementById('start-game-btn');
 
 // Direct Function
-const start = function gameStart() {
-  console.log('Game is starting ---');
-}
+// const start = function gameStart() {
+//   console.log('Game is starting ---');
+// };
 
 // const person = {
 //   greet: function greet() {
@@ -14,4 +14,6 @@ const start = function gameStart() {
 // person.greet();
 
 // Indirect Function
-startGameBtn.addEventListener('click', start);
+startGameBtn.addEventListener('click', function() {
+  console.log('Game is starting ---');
+});
