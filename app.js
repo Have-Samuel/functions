@@ -85,12 +85,16 @@ startGameBtn.addEventListener('click', () => {
 
 // Not Related to the Game
 // Using the REST Operator
-const sumUp = (a, b, ...numbers) => {
+const sumUp = (resultHandler, ...numbers) => {
+  // nesting functions into functions
+  const validateNumber = (number) => {
+    return isNaN(number) ? 0 : number;
+  };
   let sum = 0;
   for (const num of numbers) {
-    sum += num;
+    sum += validateNumber(num);
   }
-  return sum;
+  resultHandler(sum);
 };
 
 // Don't use this
@@ -101,6 +105,11 @@ const subtractUp = function() {
   }
   return sum;
 };
-console.log(sumUp(1, 3, 5, 6, -6, 8));
-console.log(sumUp(1, 3, 5, 6, -6, 8, 9, 19));
+
+const showResult = (result) => {
+  alert('The result after adding all numbersis: ' + result);
+};
+
+sumUp(showResult, 1, 3, 'dd', 6, -6, 8);
+sumUp(showResult, 1, 3, 5, 6, -6, 8, 9, 19);
 console.log(subtractUp(20, 90, 81));
